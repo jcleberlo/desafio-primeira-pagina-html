@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML básico</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        * {
+            font-family: Roboto, sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: monospace;
+            font-style: normal;
+            font-weight: normal;
+            background: #e7e9ec;
+            border: .5px solid #c4c7ca  ;
+        }
+
+        blockquote div,
+        blockquote p {
+            background: #f8f9fa;
+            padding-right: 20px;
+            border: .5px solid #c4c7ca ;
+            width: fit-content;
+        }
+
+        blockquote div ol,
+        blockquote div ul {
+            margin: 16px 0;
+        }
+
+        blockquote p {
+            padding: 10px;
+        }
+
+        blockquote pre {
+            border: .5px solid #c4c7ca;
+            width: fit-content;
+            padding: 20px;
+        }
+
+        small {
+            font-size: 10px;
+            font-weight: initial;
+            border: .5px solid #dbdee2;
+            background: #f8f9fa;
+            padding: 1px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body style="background: #e7e9ec; display: flex; flex-wrap: wrap;">
+    <main style="max-width: 1000px; margin-left: auto; margin-right: auto; border: .5px solid #c4c7ca ; background: white; padding: 40px;">
+        <header>
+            <img style="width: 100%; border: 2px solid #c4c7ca;" src="https://res.cloudinary.com/practicaldev/image/fetch/s--dkFxTwJ2--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/ux6uf870i7esod0sx4sw.png"
+                alt="Código HTML">
+            <h1 id="titulo">HTML Básico</h1>
+        </header>
+
+        <hr>
+
+        <section>
+            <nav>
+                <h2 id="indice">Índice</h2>
+                <ul style="font-size: small; background: #f8f9fa; border: .5px solid #c4c7ca; padding-top: 20px; padding-bottom: 20px;" class="indice">
+                    <li><a href="#introducao">Introdução ao HTML</a></li>
+                    <li><a href="#programacao">Introdução à programação WEB</a></li>
+                    <li><a href="#estrutura">A estrutura básica de uma página HTML</a></li>
+                    <ul>
+                        <li><a href="#entendendo">Entendendo a estrutura básica de uma página HTML</a></li>
+                        <li><a href="#html">Tag HTML</a></li>
+                        <li><a href="#head">Tag Head</a></li>
+                        <li><a href="#title">Tag Title</a></li>
+                        <li><a href="#body">Tag body</a></li>
+                    </ul>
+                    <li><a href="#tags">Falando sobre Tags</a></li>
+                    <ul>
+                        <li><a href="#funcionam">O que são e como funcionam</a></li>
+                        <li><a href="#tipos">Tipos de tags: contêiner e não contêiner.</a></li>
+                    </ul>
+                    <li><a href="#atributos">Atributos das tags</a></li>
+                    <ul>
+                        <li><a href="#funcionam2">O que são e como funcionam</a></li>
+                        <li><a href="#tipos2">Tipos de atributos: genéricos e específicos</a></li>
+                        <li><a href="#id">Atributo id</a></li>
+                        <li><a href="#style">Atributo style</a></li>
+                        <li><a href="#class">Atributo class</a></li>
+                        <li><a href="#type">Atributo type da tag input</a></li>
+                        <li><a href="#src">Atributo src da tag img</a></li>
+                        <li><a href="#href">Atributo href da tag a</a></li>
+                        <li><a href="#target">Atributo target da tag a</a></li>
+                        <li><a href="#title2">Atributo title</a></li>
+                    </ul>
+                    <li><a href="#textos">Textos e suas tags</a></li>
+                    <ul>
+                        <li><a href="#tipografia">Tipografia HTML</a></li>
+                        <li><a href="#principais">Principais tags e como o navegador se comporta com os seus usos</a>
+                        </li>
+                        <li><a href="#i">Tag i</a></li>
+                        <li><a href="#strong">Tag Strong</a></li>
+                        <li><a href="#u">Tag u</a></li>
+                        <li><a href="#mark">Tag mark</a></li>
+                        <li><a href="#sup">Tag sup</a></li>
+                        <li><a href="#sub">Tag sub</a></li>
+                        <li><a href="#combinando">Combinando o uso de tags</a></li>
+                    </ul>
+                    <li><a href="#listas">Listas</a></li>
+                    <ul>
+                        <li><a href="#tipos3">Tipos e usos</a></li>
+                        <li><a href="#ol">Tag ol</a></li>
+                        <li><a href="#ul">Tag ul</a></li>
+                        <li><a href="#li">Tag li</a></li>
+                        <li><a href="#lista">Lista dentro de lista</a></li>
+                    </ul>
+                    <li><a href="#links">Links</a></li>
+                    <ul>
+                        <li><a href="#a">Tag a</a></li>
+                        <li><a href="#href">Atributo href</a></li>
+                    </ul>
+                    <li><a href="#outras">Outras tags</a></li>
+                    <ul>
+                        <li><a href="#font">Tag font</a></li>
+                        <li><a href="#del">Tag del</a></li>
+                        <li><a href="#abbr">Tag abbr</a></li>
+                    </ul>
+                    <li><a href="#conclusao">Conclusão</a></li>
+                    <li><a href="#outros">Outros sites que abordam esse assundo</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <br>
+
+        <article>
+            <section>
+                <h2 id="introducao">Introdução ao HTML <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h2>
+                <p>
+                    HTML é a sigla para <abbr title="Linguagem de Marcação de Hipertexto">HyperText Markup
+                    Language</abbr>, que significa Linguagem de Marcação de Hipertexto. É uma linguagem usada para criar 
+                    e estruturar páginas web, que podem ser visualizadas em um navegador. O HTML é composto por elementos 
+                    chamados tags, que definem o conteúdo e o layout da página. Cada tag tem um nome e pode ter atributos, 
+                    que são informações adicionais sobre o elemento. As tags são escritas entre sinais de menor e maior (< e
+                    >), e geralmente vêm em pares: uma tag de abertura e uma tag de fechamento. Por exemplo:
+                    <code>&lt;p&gt;Este é um parágrafo&lt;/p&gt;</code>.
+                </p>
+
+                <br>
+
+                <h2 id="programacao">Introdução à programação WEB <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h2>
+                <p>
+                    A programação web é o processo de criar e manter sites e aplicações que funcionam na internet.
+                    Existem dois tipos de programação web: front-end e back-end. O front-end é a parte que o usuário vê 
+                    e interage, como o design, as cores, as imagens, os botões, os formulários etc. O back-end é a parte 
+                    que fica nos servidores, e é responsável por processar os dados, fazer cálculos, conectar com bancos de 
+                    dados, enviar e-mails etc. O HTML é uma das linguagens usadas para o desenvolvimento do front-end, junto 
+                    com outras como CSS e JavaScript.
+                </p>
+            </section>
+
+            <br>
+            <section>
+                <h2 id="estrutura">
+                    A estrutura básica de uma página HTML <small><a href="#indice" title="Voltar ao índice">Voltar</a></small>
+                </h2>
+                <p>
+                    Uma página HTML tem uma estrutura padrão, que consiste em três partes principais: a declaração do
+                    tipo de documento (DOCTYPE), a tag <code>&lt;html&gt;</code> e a tag <code>&lt;head&gt;</code> e a tag
+                    <code>&lt;body&gt;</code>.
+                </p>
+
+                <h3 id="entendendo">
+                    Entendendo a estrutura básica de uma página HTML <small><a href="#indice" title="Voltar ao índice">Voltar</a></small>
+                </h3>
+                <p id>
+                    A declaração do tipo de documento (DOCTYPE) é a primeira linha de uma página HTML, e serve para
+                    informar ao navegador qual é a versão do HTML que está sendo usada. A versão mais atual é o HTML5, 
+                    e a declaração é simplesmente: <code>&lt;!DOCTYPE html&gt;</code>.</p>
+                <p id="html">
+                    A tag <code>&lt;html&gt;</code> é a raiz de uma página HTML, e envolve todo o conteúdo da página.
+                    Ela pode ter um atributo chamado <code>lang</code>, que indica o idioma da página. Por exemplo:
+                    <code>&lt;html lang="pt-br"&gt;</code>.
+                </p>
+                <p id="head">
+                    A tag <code>&lt;head&gt;</code> é a cabeça da página HTML, e contém informações que não são
+                    mostradas diretamente na página, mas que são importantes para o funcionamento ou a descrição da página. 
+                    Por exemplo: o título da página, as meta tags, os links para arquivos externos etc.</p>
+                <p id="title">
+                    A tag <code>&lt;title&gt;</code> é uma das tags que ficam dentro da tag <code>&lt;head&gt;</code>, e
+                    define o título da página, que aparece na aba ou na barra de título do navegador. Por exemplo:
+                    <code>&lt;title&gt;Introdução ao HTML&lt;/title&gt;</code>.
+                </p>
+                <p id="body">
+                    A tag <code>&lt;body&gt;</code> é o corpo da página HTML, e contém o conteúdo que é mostrado na
+                    página, como textos, imagens, links, listas, tabelas, formulários etc.
+                </p>
+                <p>Um exemplo de uma página HTML básica é:</p>
+
+                <blockquote>
+                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+   &lt;title>Introdução ao HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Introdução ao HTML&lt;/h1&gt;
+    &lt;p>HTML é a linguagem usada para criar páginas web.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+                <h2 id="tags">Falando sobre Tags <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h2>
+                <h3 id="funcionam">O que são e como funcionam <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    As tags são os elementos que compõem uma página HTML, e definem o tipo,
+                    o conteúdo e o formato de cada parte da página. Cada tag tem um nome, que é
+                    escrito entre sinais de menor e maior (< e >). Algumas tags têm uma barra (/)
+                    antes do nome, e são chamadas de tags de fechamento. Elas indicam o fim de
+                    um elemento. Por exemplo: <code>&lt;/p&gt;</code> é a tag de fechamento da tag
+                    <code>&lt;p&gt;</code>. Outras tagsnão têm uma tag de fechamento, e são chamadas
+                    de tags não contêineres. Elas são usadas para inserir elementos que não têm conteúdo,
+                    como imagens,linhas horizontais, quebras de linha etc. Por exemplo: 
+                    <code>&lt;img&gt;</code> é a tag usada para inserir uma imagem.
+                </p>
+
+                <h3 id="tipos">
+                    Tipos de tags: contêiner e não contêiner. <small><a href="#indice" title="Voltar ao índice">Voltar</a></small>
+                </h3>
+                <p>
+                    As tags contêineres são aquelas que têm uma tag de abertura e uma tag de
+                    fechamento, e que envolvem um conteúdo. Por exemplo: <br><code>&lt;p&gt;Este é um 
+                    parágrafo&lt;/p&gt;</code>. As tags não contêineres são aquelas que não têm uma tag de
+                    fechamento, e que não envolvem um conteúdo. Por exemplo: <code>&lt;src="imagem.jpg"&gt;</code>.
+                    Alguns exemplos de tags contêineres são:
+                </p>
+
+                <ul>
+                    <li>
+                        <p>
+                            <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>: são usadas para definir títulos e
+                            subtítulos na página. O número indica o nível de importância do título, sendo <code>&lt;h1&gt</code>; 
+                            o mais importante e <code>&lt;h6&gt;</code> o menos importante. Por exemplo: <code>&lt;h1&gt;Introdução 
+                            ao HTML&lt;/h1&gt;</code> é o título principal da página.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>&lt;p&gt;</code>: é usada para definir um parágrafo na página. Por exemplo:
+                            <code>&lt;p&gt;HTML é a linguagem usada para criar páginas web.&lt;/p&gt;</code> é um
+                            parágrafo.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>&lt;div&gt;</code>: é usada para definir uma divisão ou uma seção na página. Por
+                            exemplo: <code>&lt;div id="menu"&gt;...&lt;/div&gt;</code> é uma divisão que contém o menu
+                            da página.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>&lt;span&gt;</code>: é usada para definir uma parte de um texto na página. Por
+                            exemplo: <code>&lt;p&gt;Este é um texto com uma &lt;span style="color: 
+                            red;">palavra&lt;/span&gt; em vermelho.&lt;/p&gt;</code> é um parágrafo com uma
+                            parte em vermelho.
+                        </p>
+                        <blockquote>
+                            <p>
+                                Este é um texto com uma <span style="color: red;">palavra</span> em vermelho.
+                            </p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p>
+                            <code>&lt;a&gt;</code>: é usada para definir um link na página. Por exemplo: <code>&lt;a 
+                            href="https://www.dio.me"&gt;DIO.me&lt;/a&gt;</code> é um link para o site da DIO.me.
+                        </p>
+                        <blockquote>
+                            <p>
+                                <a href="https://www.dio.me" target="_blank">DIO.me</a>
+                            </p>
+                        </blockquote>
+                    </li>
+                </ul>
+
+                <p>Alguns exemplos de tags não contêineres são:</p>
+
+                <ul>
+                    <li>
+                        <p>
+                            <code>&lt;img&gt;</code>: é usada para inserir uma imagem na página. Ela tem um atributo
+                            chamado <code>src</code>, que indica o endereço da imagem. Por exemplo: <code>&lt;img 
+                            src="dio.png"&gt;</code> é uma imagem com o endereço “dio.png”.
+                        </p>
+                        <blockquote>
+                            <p>
+                                <img style="width: 100px;" src="https://hermes.digitalinnovation.one/companies/a169bb67-5f72-4289-9778-fcea58dfa19a.png"
+                                    alt="DIO.me">
+                            </p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p>
+                            <code>&lt;br&gt;</code>: é usada para inserir uma quebra de linha na página. Por exemplo:
+                            <code>&lt;p&gt;Este é um texto&lt;br&gt;com duas linhas.&lt;/p&gt;</code> é um parágrafo com
+                            duas linhas.
+                        </p>
+                        <blockquote>
+                            <p>
+                                Este é um texto<br>com duas linhas.
+                            </p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p>
+                            <code>&lt;hr&gt;</code>: é usada para inserir uma linha horizontal na página. Por exemplo:
+                            <code>&lt;hr&gt;</code> é uma linha horizontal.
+                        </p>
+                        <blockquote>
+                            <div>
+                                <hr style="width: 500px; margin: 10px; margin-left: 20px;">
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p>
+                            <code>&lt;input&gt;</code>: é usada para inserir um campo de entrada na página. Ela tem
+                            um atributo chamado <code>type</code>, que indica o tipo de entrada. Por exemplo:
+                            <code>&lt;input type="text"&gt;</code> é um campo de texto.
+                        </p>
+                        <blockquote>
+                            <p><input type="text"></p>
+                        </blockquote>
+                    </li>
+                </ul>
+            </section>
+
+            <br>
+
+            <section>
+                <h2 id="atributos">Atributo das tags <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h2>
+                <h3 id="funcionam2">O que são e como funcionam <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    Os atributos são informações adicionais que podem ser colocadas nas tags,
+                    para modificar ou especificar o comportamento ou a aparência dos elementos.
+                    Cada atributo tem um nome e um valor, que são escritos dentro da tag,
+                    separados por um sinal de igual (=). O valor do atributo deve estar entre aspas
+                    duplas ("). Por exemplo: <code>&lt;p style="color: blue;"&gt;Este é um parágrafo
+                    azul&lt;/p&gt;</code> é um parágrafo com um atributo chamado style, que tem o valor
+                    “color: blue;”, que significa que a cor do texto é azul.
+                </p>
+                <blockquote>
+                    <p style="color: blue;">Este é um parágrafo azul</p>
+                </blockquote>
+
+                <h3 id="tipos2">Tipos de atributos: genéricos e específicos <small><a
+                    href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    Os atributos podem ser classificados em dois tipos: genéricos e específicos.
+                    Os atributos genéricos são aqueles que podem ser usados em qualquer tag, e
+                    que servem para identificar, classificar ou estilizar os elementos. Os atributos
+                    específicos são aqueles que só podem ser usados em algumas tags, e que
+                    servem para definir características ou funções específicas dos elementos.
+                    Alguns exemplos de atributos genéricos são:
+                </p>
+
+                <ul>
+                    <li>
+                        <p id="id">
+                            <code>id</code>: é usado para dar um identificador único a um elemento na página.
+                            Por exemplo: <code>&lt;div id="menu"&gt;...&lt;/div&gt;</code> é uma divisão que tem o
+                            identificador “menu”.
+                        </p>
+                    </li>
+                    <li>
+                        <p id="class">
+                            <code>class</code>: é usado para dar uma ou mais classes a um elemento na página.
+                            As classes servem para agrupar elementos que têm características em
+                            comum, e para facilitar a aplicação de estilos. Por exemplo: <code>&lt;p 
+                            class="destaque"&gt;Este é um parágrafo destacado&lt;/p&gt;</code> é um parágrafo
+                            que tem a classe “destaque”.
+                        </p>
+                    </li>
+                    <li>
+                        <p id="style">
+                            <code>style</code>: é usado para dar um estilo a um elemento na página. O estilo é
+                            uma série de propriedades e valores que definem a aparência do
+                            elemento, como a cor, o tamanho, a fonte, o alinhamento, o
+                            espaçamento, o fundo, a borda etc. Por exemplo: <code>&lt;p style="color: 
+                            blue; font-size: 20px; text-align: center;"&gt;Este é um parágrafo 
+                            estilizado&lt;/p&gt;</code> é um parágrafo com um estilo que define a cor do
+                            texto como azul, o tamanho da fonte como 20 pixels, e o alinhamento
+                            do texto como centralizado.
+                        </p>
+                        <blockquote>
+                            <p style="color: blue; font-size: 20px; text-align: center;">
+                                Este é um parágrafo estilizado
+                            </p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p id="type">
+                            <code>type</code>: é usado para definir o tipo de um elemento na página. Ele pode
+                            ser usado em tags como <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>,
+                            <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code> etc. Por
+                            exemplo: <code>&lt;input type="text"&gt;</code> é um campo de texto, <code>&lt;button 
+                            type="submit"&gt;</code> é um botão de envio, <code>&lt;script 
+                            type="text/javascript"&gt;</code> é um código JavaScript, <code>&lt;style 
+                            type="text/css"&gt;</code> é um código CSS etc.
+                        </p>
+                    </li>
+                    <li>
+                        <p id="src">
+                            <code>src</code>: é usado para definir a fonte de um elemento na página. Ele pode
+                            ser usado em tags como <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>,
+                            <code>&lt;video&gt;</code>,
+                            <code>&lt;iframe&gt;</code>, <code>&lt;script&gt;</code> etc. Por exemplo:
+                            <code>&lt;img src="imagem.jpg"&gt;</code> é uma imagem com o
+                            endereço “imagem.jpg”, <code>&lt;audio src="musica.mp3"&gt;</code> é um áudio com o
+                            endereço “musica.mp3”, <code>&lt;video src="video.mp4"&gt;</code> é um vídeo com o
+                            endereço “video.mp4”, <code>&lt;iframe src="https://www.dio.me"&gt;</code> é um
+                            quadro com o site da DIO.me, <code>&lt;script src="script.js"&gt;</code> é um código
+                            JavaScript externo etc.
+                        </p>
+                        <blockquote><code>&lt;iframe src="https://www.dio.me"&gt;</code></blockquote>
+                        <blockquote>
+                            <iframe style="background: #f8f9fa; border: 1px solid #c4c7ca; padding: 10px; width: 700px; height: 200px;" src="https://www.dio.me"></iframe>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p id="href">
+                            <code>href</code>: é usado para definir o endereço de um link na página. Ele pode
+                            ser usado na tag <code>&lt;a&gt;</code>, que é usada para criar links. Por exemplo:
+                            <br><code>&lt;a href="https://www.dio.me"&gt;DIO.me&lt;/a&gt;</code> é um link para o site
+                            da DIO.me.
+                        </p>
+                    </li>
+                    <li>
+                        <p id="target">
+                            <code>target</code>: é usado para definir o alvo de um link na página. Ele pode ser
+                            usado na tag <code>&lt;a&gt;</code>, e serve para indicar onde o link será aberto. Por
+                            exemplo: <code>&lt;a href="https://www.dio.me" target="_blank"&gt;DIO.me&lt;/a&gt;</code>
+                            é um link para o site da DIO.me que será aberto em uma nova aba.
+                        </p>
+                    </li>
+                    <li>
+                        <p id="title">
+                            <code>title</code>: é usado para definir o título de um elemento na página. Ele pode
+                            ser usado em várias tags, e serve para mostrar um texto quando o
+                            usuário passa o mouse sobre o elemento. Por exemplo: <code>&lt;a 
+                            href="https://www.DIO.me" title="Este é o site da 
+                            DIO.me"&gt;DIO.me&lt;/a&gt;</code> é um link para o site da DIO.me que mostra o texto “Este é
+                            o site da DIO.me” quando o usuário passa o mouse sobre ele.
+                        </p>
+                        <blockquote>
+                            <p>
+                                <a href="https://www.dio.me" title="Este é o site da DIO.me" target="_blank">DIO.me</a>
+                            </p>
+                        </blockquote>
+                    </li>
+                </ul>
+            </section>
+
+            <br>
+
+            <section>
+                <h2 id="textos">Textos e suas tags <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h2>
+                <p>
+                    Os textos são uma parte importante de uma página HTML, e podem ser
+                    formatados e organizados de diferentes formas, usando tags específicas.
+                    Algumas das tags mais usadas para trabalhar com textos são:
+                </p>
+
+                <h3 id="tipografia">Tipografia HTML <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    A tipografia HTML é o conjunto de regras e técnicas que definem a aparência
+                    e o estilo dos textos em uma página HTML. A tipografia HTML envolve
+                    aspectos como o tipo, o tamanho, a cor, o alinhamento, o espaçamento, o
+                    destaque etc. A tipografia HTML pode ser definida usando o atributo style
+                    nas tags, ou usando uma linguagem chamada CSS, que é usada para estilizar
+                    as páginas web de forma mais avançada e organizada.
+                </p>
+
+                <h3 id="principais">Principais tags e como o navegador se comporta com os seus usos <small><a
+                    href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    As principais tags usadas para definir textos em uma página HTML são:
+                </p>
+
+                <ul>
+                    <li>
+                        <p>
+                            <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>: são usadas para definir títulos e
+                            subtítulos na página. O navegador mostra os textos dessas tags com um tamanho e uma fonte
+                            diferentes, de acordo com o nível de importância do título. Por exemplo:
+                            <code>&lt;h1&gt;Introdução ao HTML&lt;/h1&gt;</code> é o título principal da página, e
+                            o navegador mostra o texto com um tamanho maior e em negrito.
+                        </p>
+                        <blockquote>
+                            <h1>
+                                <p>Introdução ao HTML</p>
+                            </h1>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p>
+                            <code>&lt;p&gt;</code>: é usada para definir um parágrafo na página. O navegador mostra
+                            os textos dessa tag com um tamanho e uma fonte padrão, e adiciona uma quebra de linha antes
+                            e depois do parágrafo. Por exemplo: <code>&ltp&gt;HTML 
+                            é a linguagem usada para criar páginas web.&lt;/p&gt;</code> é um parágrafo, e
+                            o navegador mostra o texto com uma quebra de linha acima e abaixo dele.
+                        </p>
+                        <blockquote>
+                            <p>HTML é a linguagem usada para criar páginas web.</p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p>
+                            <code>&lt;blockquote&gt;</code>: é usada para definir uma citação na página. O navegador
+                            mostra os textos dessa tag com um recuo à esquerda e à direita, e com uma fonte diferente.
+                            Por exemplo: <code>&lt;blockquote&gt;HTML é fácil de aprender.&lt;/blockquote&gt;</code>
+                            é uma citação, e o navegador mostra o texto com um recuo e uma fonte diferente.
+                        </p>
+                        <blockquote>
+                            <div style="padding: 10px;">HTML é a linguagem usada para criar páginas web.
+                                <blockquote style="margin-bottom: 0;">HTML é fácil de aprender.</blockquote>
+                            </div>
+                        </blockquote>
+                    </li>
+                </ul>
+
+                <h3 id="i">Tag <code>&lt;i&gt;</code> <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    A tag <code>&lt;i&gt;</code> é usada para definir um texto em itálico na página. O navegador
+                    mostra os textos dessa tag com uma fonte inclinada. Por exemplo: <code>&lt;p&gt;Este é 
+                    um texto com uma &lt;i&gt;palavra&lt;/i&gt; em itálico.&lt;/p&gt;</code> é um parágrafo com uma
+                    parte em itálico.
+                </p>
+                <blockquote>
+                    <p>Este é um texto com uma <i>palavra</i> em itálico.</p>
+                </blockquote>
+
+                <h3 id="strong">Tag <code>&lt;strong&gt;</code> <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    A tag <code>&lt;strong&gt;</code> é usada para definir um texto em negrito na página. O
+                    navegador mostra os textos dessa tag com uma fonte mais grossa. Por
+                    exemplo: <code>&lt;p&gt;Este é um texto com uma &lt;strong&gt;palavra&lt;/strong&gt; em 
+                    negrito.&lt;/p&gt;</code> é um parágrafo com uma parte em negrito.
+                </p>
+                <blockquote>
+                    <p>Este é um texto com uma <strong>palavra</strong> em negrito.</p>
+                </blockquote>
+
+                <h3 id="u">Tag <code>&lt;u&gt;</code> <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    A tag <code>&lt;u&gt;</code> é usada para definir um texto sublinhado na página. O navegador
+                    mostra os textos dessa tag com uma linha abaixo da fonte. Por exemplo:
+                    <code>&lt;p&gt;Este é um texto com uma &lt;u&gt;palavra&lt;/u&gt; sublinhada.&lt;/p&gt;</code> é um
+                    parágrafo com uma parte sublinhada.
+                </p>
+                <blockquote>
+                    <p>Este é um texto com uma <u>palavra</u> sublinhada.</p>
+                </blockquote>
+
+                <h3 id="mark">Tag <code>&lt;mark&gt;</code> <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    A tag <code>&lt;mark&gt;</code> é usada para definir um texto marcado na página. O navegador
+                    mostra os textos dessa tag com uma cor de fundo diferente. Por exemplo:
+                    <code>&lt;p&gt;Este é um texto com uma &lt;mark&gt;palavra&lt;/mark&gt; marcada.&lt;/p&gt;</code> é
+                    um parágrafo com uma parte marcada.
+                </p>
+                <blockquote>
+                    <p>Este é um texto com uma <mark>palavra</mark> marcada.</p>
+                </blockquote>
+
+                <h3 id="sup">Tag <code>&lt;sup&gt;</code> <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    A tag <code>&lt;sup&gt;</code> é usada para definir um texto sobrescrito na página. O navegador
+                    mostra os textos dessa tag com uma fonte menor e acima da linha base. Por
+                    exemplo: <code>&lt;p&gt;Este é um texto com uma &lt;sup&gt;palavra&lt;/sup&gt; 
+                    sobrescrita.&lt;/p&gt;</code> é um parágrafo com uma parte sobrescrita.
+                </p>
+                <blockquote>
+                    <p>Este é um texto com uma <sup>palavra</sup> sobrescrita.</p>
+                </blockquote>
+
+                <h3 id="sub">Tag <code>&lt;sub&gt;</code> <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    A tag <code>&lt;sub&gt;</code> é usada para definir um texto subscrito na página. O navegador
+                    mostra os textos dessa tag com uma fonte menor e abaixo da linha base. Por
+                    exemplo: <code>&lt;p&gt;Este é um texto com uma &lt;sub&gt;palavra&lt;/sub&gt; subscrita.&lt;/p&gt;</code> 
+                    é um parágrafo com uma parte subscrita.
+                </p>
+                <blockquote>
+                    <p>Este é um texto com uma <sub>palavra</sub> subscrita.</p>
+                </blockquote>
+
+                <h3 id="combinando">Combinando o uso de tags <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    As tags podem ser combinadas para criar efeitos diferentes nos textos. Por exemplo:
+                    <code>&lt;p&gt;Este é um texto com uma &lt;strong&gt;&lt;i&gt;&lt;u&gt;palavra&lt;/u&gt;&lt;/i&gt;&lt;/strong&gt; 
+                    em negrito, itálico e sublinhado.&lt;/p&gt;</code> é um parágrafo com uma parte em negrito, itálico e
+                    sublinhado.
+                </p>
+                <blockquote>
+                    <p>Este é um texto com uma <strong><i><u>palavra</u></i></strong> em negrito, itálico e sublinhado.
+                    </p>
+                </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+                <h2 id="listas">Listas <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h2>
+                <p>
+                    As listas são elementos que servem para organizar e apresentar uma série de
+                    itens na página. As listas podem ser de dois tipos: ordenadas e não ordenadas.
+                    As listas ordenadas são aquelas que têm uma ordem ou uma sequência lógica,
+                    e são representadas por números ou letras. As listas não ordenadas são aquelas
+                    que não têm uma ordem ou uma sequência lógica, e são representadas por
+                    símbolos ou marcadores.
+                </p>
+
+                <h3 id="tipos3">Tipos e usos <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    As listas podem ser usadas para diversos fins, como mostrar uma lista de
+                    compras, uma lista de tarefas, uma lista de ingredientes, uma lista de passos
+                    etc. As listas podem ser criadas usando as seguintes tags:
+                </p>
+
+                <ul>
+                    <li>
+                        <p>
+                            <code>&lt;ol&gt;</code>: é usada para criar uma lista ordenada na página. Ela envolve os
+                            itens da lista, que são definidos pela tag <code>&lt;li&gt;</code>. Por exemplo:
+                            <code>&lt;ol&gt;&lt;li&gt;Primeiro item&lt;/li&gt;&lt;li&gt;Segundo item&lt;/li&gt;&lt;li&gt;Terceiro 
+                            item&lt;/li&gt;&lt;/ol&gt;</code> é uma lista ordenada com três itens.
+                        </p>
+                        <blockquote>
+                            <div>
+                                <ol>
+                                    <li>Primeiro item</li>
+                                    <li>Segundo item</li>
+                                    <li>Terceiro item</li>
+                                </ol>
+                            </div>
+                        </blockquote>
+
+                    </li>
+                    <li>
+                        <p>
+                            <code>&lt;ul&gt;</code>: é usada para criar uma lista não ordenada na página. Ela envolve
+                            os itens da lista, que são definidos pela tag <code>&lt;li&gt;</code>. Por exemplo:
+                            <code>&lt;ul&gt;&lt;li&gt;Primeiro item&lt;/li&gt;&lt;li&gt;Segundo item&lt;/li&gt;&lt;li&gt;Terceiro 
+                            item&lt;/li&gt;&lt;/ul&gt;</code> é uma lista não ordenada com três itens.
+                        </p>
+                        <blockquote>
+                            <div>
+                                <ul>
+                                    <li>Primeiro item</li>
+                                    <li>Segundo item</li>
+                                    <li>Terceiro item</li>
+                                </ul>
+                            </div>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p>
+                            <code>&lt;li&gt;</code>: é usada para definir um item de uma lista na página. Ela fica
+                            dentro das tags <code>&lt;ol&gt;</code> ou <code>&lt;ul&gt;</code>. Por exemplo:
+                            <code>&lt;li&gt;Primeiro item&lt;/li&gt;</code> é um item de uma lista.
+                        </p>
+                    </li>
+                </ul>
+
+                <h3 id="ol">Tag <code>&lt;ol&gt;</code> <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    A tag <code>&lt;ol&gt;</code> é usada para criar uma lista ordenada na página, ou seja, uma lista
+                    que tem uma ordem ou uma sequência lógica. A tag <code>&lt;ol&gt;</code> envolve os itens da
+                    lista, que são definidos pela tag <code>&lt;li&gt;</code>. Cada item da lista é representado por um
+                    número ou uma letra, que indica a sua posição na lista. Por exemplo:
+                </p>
+
+                <blockquote>
+                    <pre>
+&lt;ol&gt;
+    &lt;li&gt;Primeiro passo&lt;/li&gt;
+    &lt;li&gt;Segundo passo&lt;/li&gt;
+    &lt;li&gt;Terceiro passo&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                </blockquote>
+
+                <blockquote>
+                    <div>
+                        <ol>
+                            <li>Primeiro passo</li>
+                            <li>Segundo passo</li>
+                            <li>Terceiro passo</li>
+                        </ol>
+                    </div>
+                </blockquote>
+
+                <p>
+                    Esse código cria uma lista ordenada com três passos, que são mostrados na
+                    página com os números 1, 2 e 3. A lista ordenada pode ter diferentes tipos de
+                    numeração, como números romanos, números arábicos, letras maiúsculas,
+                    letras minúsculas etc. Para definir o tipo de numeração, podemos usar o
+                    atributo <code>type</code> na tag <code>&lt;ol&gt;</code>. Por exemplo:
+                </p>
+
+                <blockquote>
+                    <pre>
+&lt;ol type="I"&gt;
+    &lt;li&gt;Primeiro passo&lt;/li&gt;
+    &lt;li&gt;Segundo passo&lt;/li&gt;
+    &lt;li&gt;Terceiro passo&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                </blockquote>
+
+                <blockquote>
+                    <div>
+                        <ol type="I">
+                            <li>Primeiro passo</li>
+                            <li>Segundo passo</li>
+                            <li>Terceiro passo</li>
+                        </ol>
+                    </div>
+                </blockquote>
+
+                <p>
+                    Esse código cria uma lista ordenada com três passos, que são mostrados na
+                    página com os números romanos I, II e III. Alguns valores possíveis para o
+                    atributo type são:
+                </p>
+
+                <ul>
+                    <li><code>1</code>: para números arábicos (1, 2, 3, …)</li>
+                    <li><code>A</code>: para letras maiúsculas (A, B, C, …)</li>
+                    <li><code>a</code>: para letras minúsculas (a, b, c, …)</li>
+                    <li><code>I</code>: para números romanos maiúsculos (I, II, III, …)</li>
+                    <li><code>i</code>: para números romanos minúsculos (i, ii, iii, …)</li>
+                </ul>
+
+                <p>
+                    A lista ordenada também pode ter um valor inicial para a numeração, que
+                    pode ser diferente de 1. Para definir o valor inicial, podemos usar o atributo
+                    <code>start</code> na tag <code>&lt;ol&gt;</code>. Por exemplo:
+                </p>
+
+                <blockquote>
+                    <pre>
+&lt;ol start="5"&gt;
+    &lt;li&gt;Quinto passo&lt;/li&gt;
+    &lt;li&gt;Sexto passo&lt;/li&gt;
+    &lt;li&gt;Sétimo passo&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                </blockquote>
+
+                <blockquote>
+                    <div>
+                        <ol start="5">
+                            <li>Quinto passo</li>
+                            <li>Sexto passo</li>
+                            <li>Sétimo passo</li>
+                        </ol>
+                    </div>
+                </blockquote>
+
+                <p>
+                    Esse código cria uma lista ordenada com três passos, que são mostrados na
+                    página com os números 5, 6 e 7. O atributo start pode receber qualquer valor
+                    numérico, positivo ou negativo. Por exemplo:
+                </p>
+
+                <blockquote>
+                    <pre>
+&lt;ol start="-3"&gt;
+    &lt;li&gt;Terceiro passo antes do zero&lt;/li&gt;
+    &lt;li&gt;Segundo passo antes do zero&lt;/li&gt;
+    &lt;li&gt;Primeiro passo antes do zero&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                </blockquote>
+
+                <blockquote>
+                    <div>
+                        <ol start="-3">
+                            <li>Terceiro passo antes do zero</li>
+                            <li>Segundo passo antes do zero</li>
+                            <li>Primeiro passo antes do zero</li>
+                        </ol>
+                    </div>
+                </blockquote>
+
+                <p>
+                    Esse código cria uma lista ordenada com três passos, que são mostrados na
+                    página com os números -3, -2 e -1.
+                </p>
+
+                <h3 id="ul">Tag <code>&lt;ul&gt</code> <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    A tag <code>&lt;ul&gt</code>; é usada para criar uma lista não ordenada na página, ou seja, uma
+                    lista que não tem uma ordem ou uma sequência lógica. A tag <code>&lt;ul&gt;</code> envolve os
+                    itens da lista, que são definidos pela tag <code>&lt;li&gt;</code>. Cada item da lista é
+                    representado por um símbolo ou um marcador, que pode ser um círculo, um
+                    quadrado, um disco etc. Por exemplo:
+                </p>
+
+                <blockquote>
+                    <pre>
+&lt;ul&gt;
+    &lt;li&gt;Primeiro item&lt;/li&gt;
+    &lt;li&gt;Segundo item&lt;/li&gt;
+    &lt;li&gt;Terceiro item&lt;/li&gt;
+&lt;/ul&gt;</pre>
+                </blockquote>
+
+                <blockquote>
+                    <div>
+                        <ul>
+                            <li>Primeiro item</li>
+                            <li>Segundo item</li>
+                            <li>Terceiro item</li>
+                        </ul>
+                    </div>
+                </blockquote>
+
+                <p>
+                    Esse código cria uma lista não ordenada com três itens, que são mostrados na
+                    página com círculos. A lista não ordenada pode ter diferentes tipos de
+                    marcadores, que podem ser definidos usando o atributo <code>type</code> na tag
+                    <code>&lt;ul&gt;</code>. Por exemplo:
+                </p>
+
+                <blockquote>
+                    <pre>
+&lt;ul type="square"&gt;
+    &lt;li&gt;Primeiro item&lt;/li&gt;
+    &lt;li&gt;Segundo item&lt;/li&gt;
+    &lt;li&gt;Terceiro item&lt;/li&gt;
+&lt;/ul&gt;</pre>
+                </blockquote>
+
+                <blockquote>
+                    <div>
+                        <ul type="square">
+                            <li>Primeiro item</li>
+                            <li>Segundo item</li>
+                            <li>Terceiro item</li>
+                        </ul>
+                    </div>
+                </blockquote>
+
+                <p>
+                    Esse código cria uma lista não ordenada com três itens, que são mostrados na
+                    página com quadrados. Alguns valores possíveis para o atributo <code>type</code> são:
+                </p>
+
+                <ul>
+                    <li><code>disc</code>: para discos (padrão)</li>
+                    <li><code>circle</code>: para círculos</li>
+                    <li><code>square</code>: para quadrados</li>
+                    <li><code>none</code>: para nenhum marcador</li>
+                </ul>
+
+                <h3 id="li">Tag <code>&lt;li&gt;</code> <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    A tag <code>&lt;li&gt;</code> é usada para definir um item de uma lista na página, seja ela
+                    ordenada ou não ordenada. A tag <code>&lt;li&gt;</code> fica dentro das tags <code>&lt;ol&gt;</code>
+                    ou <code>&lt;ul&gt;</code>, e pode conter qualquer tipo de conteúdo, como textos, imagens, links etc.
+                    Por exemplo:
+                </p>
+
+                <blockquote>
+                    <pre>
+&lt;ul&gt;
+    &lt;li&gt;Este é um texto&lt;/li&gt;
+    &lt;li&gt;&lt;img src="imagem.jpg"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="https://www.dio.me"&gt;Este é um link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+                </blockquote>
+
+                <blockquote>
+                    <div>
+                        <ul>
+                            <li>Este é um texto</li>
+                            <li>
+                                <img style=" width: 50px;" src="https://hermes.digitalinnovation.one/companies/a169bb67-5f72-4289-9778-fcea58dfa19a.png"
+                                    alt="DIO.me">
+                            </li>
+                            <li>
+                                <a href="https://www.dio.me" target="_blank">Este é um link</a>
+                            </li>
+                        </ul>
+                    </div>
+                </blockquote>
+
+                <p>
+                    Esse código cria uma lista não ordenada com três itens, que são um texto, uma
+                    imagem e um link. A tag <code>&lt;li&gt;</code> também pode ter um atributo chamado
+                    <code>value</code>, que serve para definir o valor do item na lista ordenada. Por exemplo:
+                </p>
+
+                <blockquote>
+                    <pre>
+&lt;ol&gt;
+    &lt;li value="10"&gt;Décimo item&lt;/li&gt;
+    &lt;li&gt;Item seguinte&lt;/li&gt;
+    &lt;li&gt;Item seguinte&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                </blockquote>
+
+                <blockquote>
+                    <div>
+                        <ol>
+                            <li value="10">Décimo item</li>
+                            <li>Item seguinte</li>
+                            <li>Item seguinte</li>
+                        </ol>
+                    </div>
+                </blockquote>
+
+                <p>
+                    Esse código cria uma lista ordenada com três itens, que são mostrados na
+                    página com os números 10, 11 e 12.
+                </p>
+
+                <h3 id="lista">Lista dentro de lista <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    Uma lista pode conter outra lista dentro dela, criando uma lista aninhada ou
+                    uma sublista. Para criar uma lista dentro de outra lista, basta colocar a tag
+                    <code>&lt;ol&gt;</code> ou <code>&lt;ul&gt;</code> dentro da tag <code>&lt;li&gt;</code> 
+                    da lista principal. Por exemplo:
+                </p>
+
+                <blockquote>
+                    <pre>
+&lt;ul&gt;
+    &lt;li&gt;Frutas
+        &lt;ul&gt;
+            &lt;li&gt;Banana&lt;/li&gt;
+            &lt;li&gt;Maçã&lt;/li&gt;
+            &lt;li&gt;Laranja&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Legumes
+        &lt;ul&gt;
+            &lt;li&gt;Cenoura&lt;/li&gt;
+            &lt;li&gt;Alface&lt;/li&gt;
+            &lt;li&gt;Tomate&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Verduras
+        &lt;ul&gt;
+            &lt;li&gt;Espinafre&lt;/li&gt;
+            &lt;li&gt;Couve&lt;/li&gt;
+            &lt;li&gt;Brócolis&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</pre>
+                </blockquote>
+
+                <blockquote>
+                    <div>
+                        <ul>
+                            <li>Frutas
+                                <ul>
+                                    <li>Banana</li>
+                                    <li>Maçã</li>
+                                    <li>Laranja</li>
+                                </ul>
+                            </li>
+                            <li>Legumes
+                                <ul>
+                                    <li>Cenoura</li>
+                                    <li>Alface</li>
+                                    <li>Tomate</li>
+                                </ul>
+                            </li>
+                            <li>Verduras
+                                <ul>
+                                    <li>Espinafre</li>
+                                    <li>Couve</li>
+                                    <li>Brócolis</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </blockquote>
+
+                <p>
+                    Esse código cria uma lista não ordenada com três itens, que são frutas,
+                    legumes e verduras. Cada item tem uma sublista não ordenada com três itens,
+                    que são exemplos de cada categoria. A lista aninhada pode ter um nível
+                    diferente da lista principal, ou seja, pode ser ordenada ou não ordenada, e
+                    pode ter um tipo diferente de numeração ou de marcador. Por exemplo:
+                </p>
+
+                <blockquote>
+                    <pre>
+&lt;ol&gt;
+    &lt;li&gt;Primeiro passo
+        &lt;ul&gt;
+            &lt;li&gt;Faça isso&lt;/li&gt;
+            &lt;li&gt;Faça aquilo&lt;/li&gt;
+            &lt;li&gt;Faça aquilo outro&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Segundo passo
+        &lt;ol type="a"&gt;
+            &lt;li&gt;Faça isso&lt;/li&gt;
+            &lt;li&gt;Faça aquilo&lt;/li&gt;
+            &lt;li&gt;Faça aquilo outro&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Terceiro passo
+        &lt;ol type="I"&gt;
+            &lt;li&gt;Faça isso&lt;/li&gt;
+            &lt;li&gt;Faça aquilo&lt;/li&gt;
+            &lt;li&gt;Faça aquilo outro&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;</pre>
+                </blockquote>
+
+                <blockquote>
+                    <div>
+                        <ol>
+                            <li>Primeiro passo
+                                <ul>
+                                    <li>Faça isso</li>
+                                    <li>Faça aquilo</li>
+                                    <li>Faça aquilo outro</li>
+                                </ul>
+                            </li>
+                            <li>Segundo passo
+                                <ol type="a">
+                                    <li>Faça isso</li>
+                                    <li>Faça aquilo</li>
+                                    <li>Faça aquilo outro</li>
+                                </ol>
+                            </li>
+                            <li>Terceiro passo
+                                <ol type="I">
+                                    <li>Faça isso</li>
+                                    <li>Faça aquilo</li>
+                                    <li>Faça aquilo outro</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </blockquote>
+
+                <p>
+                    Esse código cria uma lista ordenada com três passos, que são mostrados na
+                    página com os números 1, 2 e 3. Cada passo tem uma sublista com três itens,
+                    que são mostrados na página com diferentes tipos de numeração: círculos,
+                    letras minúsculas e números romanos maiúsculos.
+                </p>
+            </section>
+
+            <br>
+
+            <section>
+                <h2 id="links">Links <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h2>
+                <p>
+                    Os links são elementos que servem para conectar uma página HTML com
+                    outra página, um arquivo, um e-mail, um telefone etc. Os links permitem que
+                    o usuário navegue pela internet, acessando diferentes conteúdos e recursos. Os
+                    links podem ser criados usando a tag <code>&lt;a&gt;</code>, que é usada para definir um texto ou
+                    uma imagem como um link.
+                </p>
+
+                <h3 id="a">Tag <code>&lt;a&gt;</code> <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    A tag <code>&lt;a&gt;</code> é usada para definir um link na página. Ela tem um atributo
+                    chamado <code>href</code>, que indica o endereço do link. Por exemplo: <br><code>&lt;a
+                    href="https://www.dio.me"&gt;DIO.me&lt;/a&gt;</code> é um link para o site da DIO.me. A tag
+                    <code>&lt;a&gt;</code> pode ter outros atributos, como <code>target</code>, <code>title</code>,
+                    <code>download</code> etc. Por exemplo:
+                    <code>&lt;a href="https://www.dio.me" target="_blank" title="Este é o site da
+                    DIO.me" &gt;DIO.me&lt;/a&gt;</code> é um link
+                    para o site da DIO.me que será aberto em uma nova aba, que mostra o texto “Este é o site da DIO.me” quando o
+                    usuário passa o mouse sobre ele.
+                </p>
+
+                <h3 id="href">Atributo <code>href</code> <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h3>
+                <p>
+                    O atributo <code>href</code> é usado para definir o endereço de um link na página. Ele
+                    pode ter diferentes valores, dependendo do tipo de link que se quer criar.
+                    Alguns exemplos de valores são:
+                </p>
+
+                <ul>
+                    <li>
+                        <p>
+                            Um endereço absoluto: é um endereço completo, que inclui o
+                            protocolo, o domínio, o caminho e o arquivo. Por exemplo: <br>
+                            <code>&lt;a href="https://www.dio.me"&gt;DIO.me&lt;/a&gt;</code>
+                            é um link para a página de pesquisa da DIO.me.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Um endereço relativo: é um endereço parcial, que se baseia na
+                            localização da página atual. Por exemplo: <br><code>&lt;a
+                            href="contato.html"&gt;Contato&lt;/a&gt;</code> é um link para a página
+                            “contato.html” que está na mesma pasta que a página atual.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Um endereço de e-mail: é um endereço que abre o programa de e-mail
+                            do usuário, com o destinatário já preenchido. Por exemplo: <br><code>&lt;a
+                            href="mailto:exemplo@exemplo.com"&gt;Enviar e-mail&lt;/a&gt;</code> é um link para
+                            enviar um e-mail para “exemplo@exemplo.com”.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Um número de telefone: é um número que abre o aplicativo de telefone
+                            do usuário, com o número já preenchido. Por exemplo: <br><code>&lt;a
+                            href="tel:+5511999999999"&gt;Ligar&lt;/a&gt;</code> é um link para ligar para
+                            “+5511999999999”.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Um identificador: é um nome que identifica uma parte de uma página, e
+                            que permite criar links internos na página. Para criar um identificador,
+                            podemos usar o atributo <code>id</code> em uma tag, e para criar um link para esse
+                            identificador, podemos usar o atributo <code>href</code> com o sinal de cerquilha (#)
+                            seguido do nome do identificador. Por exemplo: <code>&lt;h2
+                            id="introducao"&gt;Introdução&lt;/h2&gt;</code> é um subtítulo com o identificador
+                            “introducao”, e <code>&lt;a href="#introducao"&gt;Ir para a introdução&lt;/a&gt;</code> é
+                            um link que leva para esse subtítulo.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>target</code>: é usado para definir o alvo de um link na página. Ele pode ser
+                            usado na tag <code>&lt;a&gt;</code>, e serve para indicar onde o link será aberto. Por
+                            exemplo: <code>&lt;a href="https://www.dio.me" target="_blank"&gt;DIO.me&lt;/a&gt;</code>
+                            é um link para o site da DIO.me que será aberto em uma nova aba. Alguns
+                            valores possíveis para o atributo <code>target</code> são:
+                        </p>
+                        <ul>
+                            <li><code>_blank</code>: para abrir o link em uma nova aba ou janela</li>
+                            <li><code>_self</code>: para abrir o link na mesma aba ou janela (padrão)</li>
+                            <li><code>_parent</code>: para abrir o link na aba ou janela pai, se houver</li>
+                            <li><code>_top</code>: para abrir o link na aba ou janela superior, se houver</li>
+                            <li><code>nome</code>: para abrir o link em uma aba ou janela com o nome especificado</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>
+                            <code>title</code>: é usado para definir o título de um elemento na página. Ele pode
+                            ser usado em várias tags, e serve para mostrar um texto quando o
+                            usuário passa o mouse sobre o elemento. Por exemplo: <code>&lt;a
+                            href="https://www.dio.me" title="Este é o site da DIO.me"&gt;DIO.me&lt;/a&gt;</code> 
+                            é um link para o site da DIO.me que mostra o texto “Este é
+                            o site da DIO.me” quando o usuário passa o mouse sobre ele. O atributo
+                            <code>title</code> pode ser usado para dar uma descrição ou uma dica sobre o
+                            elemento, ou para melhorar a acessibilidade da página.
+                        </p>
+                        <blockquote>
+                            <p>
+                                <a href="https://www.dio.me" target="_blank" title="Este é o site da DIO.me"
+                                    download="DIO _ Codifique o seu futuro global agora.html">DIO.me</a>
+                            </p>
+                        </blockquote>
+                    </li>
+                </ul>
+            </section>
+
+            <br>
+
+            <section>
+                <h2 id="outras">Outras tags <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h2>
+                <p>
+                    Além das tags que já foram mencionadas, existem outras tags que podem ser
+                    usadas para criar e formatar páginas HTML. Algumas dessas tags são:
+                </p>
+
+                <ul>
+                    <li>
+                        <p id="font">
+                            <code>&lt;font&gt;</code>: é usada para definir a fonte de um texto na página. Ela pode ter
+                            atributos como <code>face</code>, <code>size</code> e <code>color</code>, que servem para
+                            definir o
+                            tipo, o
+                            tamanho e a cor da fonte. Por exemplo: <code>&lt;font face="Arial" size="4"
+                            color="green"&gt;Este é um texto verde com a fonte Arial&lt;/font&gt;</code> é
+                            um texto com a fonte Arial, tamanho 4 e cor verde.
+                        </p>
+                        <blockquote>
+                            <p>
+                                <font face="Arial" size="4" color="green">Este é um texto verde com a fonte Arial</font>
+                            </p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p id="del">
+                            <code>&lt;del&gt;</code>: é usada para definir um texto que foi deletado ou removido na
+                            página. O navegador mostra os textos dessa tag com uma linha no meio
+                            da fonte. Por exemplo: <code>&lt;p&gt;Este é um texto com uma
+                            &lt;del&gt;palavra&lt;/del&gt; deletada.&lt;/p&gt;</code> é um parágrafo com uma parte
+                            deletada.
+                        </p>
+                        <blockquote>
+                            <p>Este é um texto com uma <del>palavra</del> deletada.</p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p id="abbr">
+                            <code>&lt;abbr&gt;</code>: é usada para definir uma abreviação ou um acrônimo na página.
+                            Ela pode ter um atributo chamado <code>title</code>, que serve para mostrar o
+                            significado da abreviação ou do acrônimo quando o usuário passa o mouse
+                            sobre o elemento. Por exemplo: <code>&lt;p&gt;HTML é uma sigla para &lt;abbr
+                            title="Linguagem de Marcação de Hipertexto"&gt;HyperText Markup
+                            Language&lt;/abbr&gt;.&lt;/p&gt;</code> é um parágrafo que mostra o significado de HTML
+                            quando o usuário passa o mouse sobre ele.
+                        </p>
+                        <blockquote>
+                            <p>
+                                HTML é uma sigla para <abbr title="Linguagem de Marcação de Hipertexto">HyperText Markup Language</abbr>.
+                            </p>
+                        </blockquote>
+                    </li>
+                </ul>
+            </section>
+
+            <br>
+
+            <section>
+                <h2 id="conclusao">Conclusão <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h2>
+                <p>
+                    Neste artigo, nós aprendemos o que é o HTML, como ele funciona, e como
+                    ele pode ser usado para criar e formatar páginas web. Nós vimos a estrutura
+                    básica de uma página HTML, as principais tags e atributos, e como eles
+                    podem ser combinados para criar diferentes tipos de conteúdo, como textos,
+                    imagens, links, listas etc. Nós também vimos algumas outras tags que podem
+                    ser úteis para criar efeitos ou funções específicas na página. O HTML é uma
+                    linguagem simples, mas poderosa, que permite criar páginas web dinâmicas e
+                    interativas. O HTML é a base da programação web, e pode ser
+                    complementado por outras linguagens, como CSS e JavaScript, que servem
+                    para estilizar e animar as páginas web. O HTML é uma linguagem em
+                    constante evolução, que se adapta às novas necessidades e tecnologias da
+                    internet. O HTML é uma linguagem que vale a pena aprender, pois abre um
+                    mundo de possibilidades para quem quer criar e compartilhar conteúdo na
+                    web.
+                </p>
+            </section>
+
+            <br>
+        </article>
+
+        <hr>
+
+        <aside>
+            <h2 id="outros">Outros sites que abordam esse assunto <small><a href="#indice" title="Voltar ao índice">Voltar</a></small></h2>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="http://www.dio.me" target="_blank">DIO | Codifique o seu futuro global agora</a>
+                    </li>
+                    <li>
+                        <a href="https://developer.mozilla.org/pt-BR/docs/learn/getting_started_with_the_web/html_basics"
+                            target="_blank">MDN Web Docs: HTML básico - Aprendendo desenvolvimento web</a>
+                    </li>
+                    <li>
+                        <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">MDN Web Docs: HTML:
+                            Linguagem de Marcação de Hipertexto</a>
+                    </li>
+                    <li>
+                        <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element" target="_blank">MDN Web
+                            Docs: Elementos HTML - HTML: Linguagem de Marcação de Hipertexto</a>
+                    </li>
+                    <li>
+                        <a href="https://pt.khanacademy.org/computing/computer-programming/html-css"
+                            target="_blank">Khan Academy: Introdução a HTML/CSS: criação de páginas Web</a>
+                    </li>
+                    <li>
+                        <a href="https://canaldoensino.com.br/blog/7-sites-gratuitos-para-aprender-html"
+                            target="_blank">Canal do Ensino: 7 sites gratuitos para aprender HTML</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <footer style="text-align: center; padding: 20px">
+            <p>Este artigo foi escrito por uma Inteligência Artificial, e foi revisado e codificado por <a href="https://www.dio.me/users/jcleberlo" target="_blank">Cléber Oliveira</a>.</p>
+        </footer>
+    </main>
+</body>
+
+</html>
